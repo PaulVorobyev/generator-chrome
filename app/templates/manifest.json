@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "<%= extensionTitle %>",
+    "version": "0.0.0",
+
+    "description": "<%= extensionDescription %>",
+    "icons": {
+        "16": "res/images/icon16.png",
+        "48": "res/images/icon48.png",
+        "128": "res/images/icon128.png"
+    },
+
+    "author": "<%= authorName %>",
+
+    <% if(browserAction) { %> 
+        "browser_action": {
+            "default_icon": {
+                "19": "res/images/icon19.png",
+                "38": "res/images/icon38.png"
+            },
+
+            "default_title": "<%= extensionTitle %>",
+            "default_popup": "index.html"
+        }
+    
+    <% } else if(pageAction) { %>
+        "page_action": {
+
+        }
+    <% } %>
+
+}
